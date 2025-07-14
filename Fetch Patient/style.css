@@ -305,6 +305,8 @@ body {
   flex: 1;
   padding: 24px;
   overflow-y: auto;
+    display: none;
+
 }
 
 /* Dashboard Layout */
