@@ -229,7 +229,7 @@ function createLabResultsSection(patientData) {
   const labResultsList = document.createElement('ul');
   patientData.lab_results.forEach(result => {
     const li = document.createElement('li');
-    li.innerHTML = `${result} <button class="download-btn" title="Download"><img src="imagesandicons/downloadbtn.png" alt="Download" /></button>`;
+    li.innerHTML = `${result} <button class="download-btn" title="Download"><img src="downloadbtn.png" alt="Download" /></button>`;
     labResultsList.appendChild(li);
   });
 
