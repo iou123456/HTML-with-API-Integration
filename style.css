@@ -1,0 +1,806 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fbfd;
+  color: #333;
+
+}
+
+/* Top Navigation Bar */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0; /* Full border */
+  border-radius: 60px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 16px; 
+  position: relative;
+  flex-wrap: wrap; 
+}
+
+/* Logo Style */
+.top-nav .logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #00a8a8; /* Darker teal for contrast */
+}
+
+.top-nav .logo img {
+  margin-right: 10px;
+  height: 36px;
+}
+
+/* Menu Links */
+.top-nav .menu {
+  display: flex;
+  gap: 12px; /* Space between menu items */
+  flex-wrap: wrap; /* Ensure that the items can wrap on smaller screens */
+}
+
+.top-nav .menu a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  border: 1px solid transparent;
+}
+
+/* Hover Effects for Menu Links */
+.top-nav .menu a:hover {
+  background-color: #f0fafa;
+  color: #00a8a8;
+  border-color: #d0f0f0;
+}
+
+/* Active Link Styling */
+.top-nav .menu a.active {
+  background-color: #00cfcf;
+  color: white !important;
+  border-color: #00a8a8;
+}
+
+/* Profile Section */
+.top-nav .profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.top-nav .profile img {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #e0e0e0;
+}
+
+.top-nav .profile-name {
+  font-weight: 500;
+  font-size: 13px;
+  color: #555;
+}
+
+/* Hamburger Icon (Hidden on large screens) */
+.top-nav .hamburger {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  gap: 5px; /* Space between hamburger bars */
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* Position the hamburger inside the top-nav */
+  top: 16px;
+  right: 16px;
+}
+
+/* Hamburger bars */
+.top-nav .hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #333; /* Dark color for the hamburger bars */
+  border-radius: 2px;
+}
+
+/* Hamburger menu container (hidden by default) */
+.top-nav .hamburger-menu {
+  display: none; /* Initially hidden */
+  flex-direction: column;
+  gap: 8px; /* Space between menu items */
+  position: absolute; /* Dropdown style */
+  top: 60px; /* Below the hamburger icon */
+  right: 16px;
+  background-color: white; /* White background for the dropdown */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 12px; /* Rounded corners */
+  padding: 16px;
+  width: 200px;
+}
+
+/* Menu items in hamburger */
+.top-nav .hamburger-menu a {
+  text-decoration: none;
+  color: #555; /* Default text color */
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  border: 1px solid transparent; /* Border for smooth hover transition */
+}
+
+/* Hover effect for menu links */
+.top-nav .hamburger-menu a:hover {
+  background-color: #f0fafa;
+  color: #00a8a8; /* Darker teal for hover */
+  border-color: #d0f0f0; /* Light border on hover */
+}
+
+/* Active link styling */
+.top-nav .hamburger-menu a.active {
+  background-color: #00cfcf;
+  color: white !important; /* Override other colors when active */
+  border-color: #00a8a8; /* Matching border for active state */
+}
+
+/* Show hamburger menu on small screen */
+@media (max-width: 1024px) {
+  .top-nav .hamburger {
+    display: flex; /* Show hamburger on small screens */
+  }
+
+  .top-nav .menu {
+    display: flex; /* Keep the menu visible */
+    flex-wrap: wrap; /* Allow items to wrap */
+    gap: 8px; /* Keep the reduced gap for medium screens */
+  }
+
+  .top-nav .menu a {
+    font-size: 12px; /* Reduce font size on smaller screens */
+    padding: 6px 12px; /* Reduce padding */
+  }
+
+  .top-nav .profile img {
+    height: 30px;
+    width: 30px; /* Adjust profile image size */
+  }
+
+  .top-nav .profile-name {
+    font-size: 12px; /* Adjust profile name font size */
+  }
+}
+
+@media (max-width: 768px) {
+  .top-nav .menu {
+    gap: 6px; /* Tighten the gap further */
+  }
+
+  .top-nav .menu a {
+    font-size: 11px; /* Further reduce font size */
+    padding: 5px 10px; /* Further reduce padding */
+  }
+
+  .top-nav .profile img {
+    height: 28px;
+    width: 28px; /* Adjust profile image size */
+  }
+
+  .top-nav .profile-name {
+    font-size: 11px; /* Adjust profile name font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .top-nav .menu {
+    gap: 4px; /* Tighten the gap even more */
+  }
+
+  .top-nav .menu a {
+    font-size: 10px; /* Further reduce font size */
+    padding: 4px 8px; /* Further reduce padding */
+  }
+
+  .top-nav .profile img {
+    height: 24px;
+    width: 24px; /* Adjust profile image size */
+  }
+
+  .top-nav .profile-name {
+    font-size: 10px; /* Adjust profile name font size */
+  }
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  padding: 24px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow on the sidebar */
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  transition: width 0.3s ease; /* Smooth transition for shrinking */
+}
+
+/* Sidebar heading */
+.sidebar h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Patient list */
+.patient-list {
+  list-style: none;
+  padding: 0;
+}
+
+.patient-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for patient list items */
+.patient-list li:hover {
+  background-color: #e0f9ff; /* Light blue hover effect */
+  font-weight: 600;
+}
+
+/* Patient image */
+.patient-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Patient details container */
+.patient-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Patient name */
+.patient-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Patient age and gender */
+.patient-age-gender {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Responsive adjustments */
+
+/* For medium screen sizes */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px; /* Reduce sidebar width */
+    padding: 16px;
+  }
+
+  .sidebar h2 {
+    font-size: 18px; /* Reduce font size of heading */
+  }
+
+  .patient-img {
+    width: 35px;
+    height: 35px; /* Reduce image size */
+  }
+
+  .patient-name {
+    font-size: 14px; /* Reduce patient name font size */
+  }
+
+  .patient-age-gender {
+    font-size: 12px; /* Reduce patient age/gender font size */
+  }
+
+  .patient-list li {
+    padding: 8px; /* Reduce padding for list items */
+    gap: 6px; /* Reduce gap between image and text */
+  }
+}
+
+/* For small screen sizes */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 180px; /* Further reduce sidebar width */
+  }
+
+  .sidebar h2 {
+    font-size: 16px; /* Further reduce font size of heading */
+  }
+
+  .patient-img {
+    width: 30px;
+    height: 30px; /* Further reduce image size */
+  }
+
+  .patient-name {
+    font-size: 12px; /* Further reduce patient name font size */
+  }
+
+  .patient-age-gender {
+    font-size: 10px; /* Further reduce patient age/gender font size */
+  }
+
+  .patient-list li {
+    padding: 6px; /* Further reduce padding for list items */
+    gap: 4px; /* Further reduce gap between image and text */
+  }
+}
+
+/* For very small screen sizes */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 140px; /* Minimize sidebar width */
+    padding: 12px; /* Reduce padding for very small screens */
+  }
+
+  .sidebar h2 {
+    font-size: 14px; /* Minimize font size for heading */
+  }
+
+  .patient-img {
+    width: 25px;
+    height: 25px; /* Minimize image size */
+  }
+
+  .patient-name {
+    font-size: 10px; /* Minimize font size for patient name */
+  }
+
+  .patient-age-gender {
+    font-size: 8px; /* Minimize font size for patient age/gender */
+  }
+
+  .patient-list li {
+    padding: 4px; /* Minimize padding for list items */
+    gap: 2px; /* Minimize gap between image and text */
+  }
+}
+
+.main-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: none;
+}
+
+/* Dashboard Layout */
+/* Dashboard Layout */
+.dashboard {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;  /* Ensures responsiveness */
+  justify-content: space-between;
+}
+
+/* Profile Card */
+.profile-card {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  margin-top: 0px; /* Adds margin to the top */
+  margin-bottom: 24px; /* Adds margin to the bottom */
+}
+
+/* Profile Card Image */
+.profile-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px; /* Space between the image and the name */
+  margin-top: 0; /* Optional: Adds margin at the top of the image if necessary */
+}
+
+/* Profile Card Heading */
+.profile-card h2 {
+  font-size: 1.5rem; /* Adjusted font size for responsiveness */
+  margin-bottom: 12px; /* Space between the name and the profile info */
+}
+
+/* Profile Info Section */
+.profile-info {
+  text-align: left;
+  font-size: 1rem; /* Adjusted font size for responsiveness */
+  margin-bottom: 20px; /* Adds space at the bottom of the profile info */
+}
+
+/* Profile Info Paragraph */
+.profile-info p {
+  margin: 6px 0; /* Space between each piece of profile info */
+}
+
+/* Show Info Button */
+.show-info-btn {
+  background-color: #00cfcf;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 16px; /* Adds margin between the button and the profile info section */
+}
+
+/* Diagnosis History Container */
+.diagnosis-history-container {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 32px;
+}
+
+/* Heading for Diagnosis History */
+.diagnosis-history-container h2 {
+  font-size: 1.6rem; /* Adjusted font size for responsiveness */
+  margin-bottom: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Blood Pressure Chart Section */
+.chart-section {
+  background-color: #f5f7fa;
+  border-radius: 12px;
+  height: 240px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Vital Signs Container */
+.vitals {
+  display: flex;
+  gap: 8px; /* Reduced gap between cards */
+  flex-wrap: wrap; /* Allow wrapping of cards when space is limited */
+  justify-content: space-between; /* Distribute space evenly */
+  margin-top: 24px;
+  width: 100%; /* Ensure it fills the container */
+  box-sizing: border-box;
+  margin-left: -8px; /* Adjust to reduce the left margin */
+  margin-right: -8px; /* Adjust to reduce the right margin */
+}
+
+/* Vital Sign Card */
+.vital-box {
+  background-color: #f1fbfe;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  flex: 1 1 200px; /* Allow the card to grow and shrink based on available space */
+  min-width: 120px; /* Set minimum width for cards */
+  max-width: 160px; /* Set maximum width for cards */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content inside the card */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0; /* Prevent the cards from shrinking too much */
+  margin-left: 4px; /* Slightly reduced left margin for cards */
+  margin-right: 4px; /* Slightly reduced right margin for cards */
+}
+
+/* Icon Styling */
+.vital-box img {
+  width: 32px; /* Reduced icon size */
+  height: 32px;
+  margin-bottom: 8px; /* Reduced space between icon and text */
+}
+
+/* Vital Sign Title */
+.vital-box h3 {
+  font-size: 1.2rem; /* Adjusted font size for responsiveness */
+  margin-bottom: 6px; /* Reduced margin */
+  color: #333;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+/* Vital Sign Value */
+.vital-box p {
+  font-size: 1rem; /* Adjusted font size for responsiveness */
+  color: #333;
+  margin-top: 8px; /* Reduced margin */
+  font-weight: bold;
+}
+
+/* Status Badge for Vital Signs */
+.status-badge {
+  padding: 6px 10px; /* Reduced padding */
+  font-size: 12px; /* Reduced font size */
+  color: white;
+  border-radius: 12px;
+  margin-top: 8px; /* Reduced margin */
+  font-weight: bold;
+}
+
+/* Status Badge Colors */
+.status-badge.normal {
+  background-color: #2ecc71; /* Green for normal */
+}
+
+.status-badge.lower {
+  background-color: #3498db; /* Blue for lower */
+}
+
+.status-badge.higher {
+  background-color: #e74c3c; /* Red for higher */
+}
+
+/* Results Container */
+.results-container {
+  display: flex; /* Using flexbox to align items side by side */
+  gap: 16px; /* Space between the containers */
+  margin-top: 16px; /* Reduced margin between results section and the content above */
+  width: 100%; /* Ensure it spans full width */
+}
+
+/* Lab Results Container */
+.lab-results {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  height: fit-content;
+  max-height: 300px; /* Set the max height to display only 3 results */
+  overflow-y: auto; /* Make it scrollable if content overflows */
+  flex: 1 1 200px; /* Adjust width to match vitals container */
+  min-width: 250px; /* Minimum width for lab results */
+}
+
+.lab-results h3 {
+  color: #2c3e50;
+  font-size: 1.2rem; /* Adjusted font size for responsiveness */
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #eee;
+}
+
+.lab-results select {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  font-size: 14px;
+}
+
+.lab-results ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0; /* Remove any default margin from the list */
+}
+
+.lab-results li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0; /* Reduced padding between items */
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.lab-results li:last-child {
+  border-bottom: none;
+}
+
+.lab-results button {
+  background: none;
+  border: 1px solid #00cfcf;
+  color: #00cfcf;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.lab-results button:hover {
+  background-color: #00cfcf;
+  color: white;
+}
+
+/* Diagnostic List */
+.diagnosis-list {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  height: fit-content;
+  max-height: 300px; /* Set the max height */
+  overflow-y: auto; /* Make it scrollable if content overflows */
+  flex: 1 1 200px; /* Adjust width to match vitals container */
+  min-width: 250px; /* Minimum width for diagnosis list */
+}
+
+.diagnosis-list h2 {
+  color: #2c3e50;
+  font-size: 1.2rem; /* Adjusted font size for responsiveness */
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.diagnosis-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.diagnosis-list thead {
+  background-color: #f8f9fa;
+}
+
+.diagnosis-list th {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #7f8c8d;
+  font-weight: 600;
+  text-align: left;
+}
+
+.diagnosis-list td {
+  padding: 12px 16px;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.diagnosis-list tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.diagnosis-list tbody tr:hover {
+  background-color: #f7fafa;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-observation {
+  background: #fff3e0;
+  color: #fb8c00;
+}
+
+.status-cured {
+  background: #e8f5e9;
+  color: #43a047;
+}
+
+.status-inactive {
+  background: #e3f2fd;
+  color: #1e88e5;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .results-container {
+    flex-direction: column; /* Stack the lab results and diagnosis list vertically */
+    gap: 16px;
+  }
+
+  .lab-results,
+  .diagnosis-list {
+    width: 100%;
+    flex: 1 1 100%; /* Allow both to expand to full width */
+  }
+}
+
+#schedule-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+#schedule-wrapper .main-content {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+#schedule-wrapper .sidebar {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  flex: 1 1 0%;
+  max-width: 75%;
+}
+
+/* Make sure content inside the sidebar expands too */
+#schedule-wrapper .sidebar > * {
+  width: 100%;
+}
+
+/* On smaller screens, stack them vertically */
+@media (max-width: 768px) {
+  #schedule-wrapper .main-content,
+  #schedule-wrapper .sidebar {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+.metric-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 23%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.metric-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.metric-card h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.metric-card p {
+  font-size: 1.2em;
+  color: #4e6bff;
+  font-weight: bold;
+}
+
