@@ -185,19 +185,19 @@ function createVitalSignsSection(patientData) {
       label: 'Respiratory Rate', 
       value: patientData.respiratory_rate,  // Dynamically fetch the value from API
       unit: 'bpm', 
-      image: 'imagesandicons/respiratory rate.svg'  // Replace with actual image path
+      image: 'respiratory rate.svg'  // Replace with actual image path
     },
     { 
       label: 'Temperature', 
       value: patientData.temperature,  // Dynamically fetch the value from API
       unit: '°F', 
-      image: 'imagesandicons/temperature.svg'  // Replace with actual image path
+      image: 'temperature.svg'  // Replace with actual image path
     },
     { 
       label: 'Heart Rate', 
       value: patientData.heart_rate,  // Dynamically fetch the value from API
       unit: 'bpm', 
-      image: 'imagesandicons/HeartBPM.svg'  // Replace with actual image path
+      image: 'HeartBPM.svg'  // Replace with actual image path
     },
   ];
 
