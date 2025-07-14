@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tech Care Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Chart.js for Blood Pressure Chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <div class="top-nav">
+    <div class="logo">
+      <img src="imagesandicons/TestLogo.png" alt="Logo" height="30" />
+    </div>
+    
+    <!-- Navigation Links -->
+    <div class="menu">
+      <a href="#" id="overview-btn">Overview</a>
+      <a href="#" id="patients-btn" class="active">Patients</a>
+      <a href="#" id="schedule-btn">Schedule</a>
+      <a href="#" id="message-btn">Message</a>
+      <a href="#">Transactions</a>
+    </div>
+
+    <!-- Profile Section -->
+    <div class="profile">
+      <img id="doctor-image" src="imagesandicons/senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc.png" alt="Dr. Jose Simmons" height="40" style="border-radius: 50%;" />
+      <div>
+        <strong id="doctor-name">Dr. Jose Simmons</strong><br />
+        <small id="doctor-role">General Practitioner</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Layout Section -->
+  <div class="layout">
+    <!-- Sidebar for Patients -->
+    <div class="sidebar" id="patients-section">
+      <h2>Patients</h2>
+      <ul class="patient-list" id="patient-list">
+        <!-- Patient names will be listed here dynamically -->
+      </ul>
+    </div>
+
+    <!-- Main Content for Selected Patient -->
+    <div class="main-content" id="patients-main-content">
+      <div class="main-content-wrapper">
+        <div id="diagnosis-history-container" class="diagnosis-history-container">
+          <!-- Blood Pressure Chart Section -->
+          <div id="blood-pressure-chart-section" class="blood-pressure-chart"></div>
+
+          <!-- Vital Signs Section -->
+          <div id="vital-signs-section" class="vital-signs"></div>
+        </div>
+        <div id="profile-card-container" class="profile-card-container">
+          <!-- Profile Card Section -->
+          <div class="profile-card">
+            <!-- Profile information will go here dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
