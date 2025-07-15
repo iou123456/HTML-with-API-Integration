@@ -1,5 +1,9 @@
 This project is focused on creating a responsive HTML page and integrating patient data via an API. The primary goal is to render a single-page UI, populated dynamically using API data for patients.
 
+## 🌐 Live Demo
+👉 [View Live Project](https://patientdatadashboard.netlify.app/)
+
+
 ## 📝 Project Overview
 
 Creating responsive HTML/CSS/JS.
@@ -42,3 +46,16 @@ project-root/
 ├── README.md               # This file
 
 └── package.json            # If using a framework or build tool
+
+## 🔧 How to Run
+### Option 1: HTML/CSS/JS Only
+Open index.html in a web browser.
+
+Ensure you're connected to the internet to make API requests.
+
+### Option 2: Using a Framework
+Run npm install to install dependencies.
+
+Run npm run dev or npm start to launch the development server.
+
+Build and include the final index.html for submission.
