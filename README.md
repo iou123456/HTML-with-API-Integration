@@ -1,6 +1,6 @@
 This project is focused on creating a responsive HTML page and integrating patient data via an API. The primary goal is to render a single-page UI, populated dynamically using API data for patients.
 
-# H1 - 📝 Project Overview
+## - 📝 Project Overview
 
 Creating responsive HTML/CSS/JS.
 
@@ -10,7 +10,7 @@ Dynamically displaying the data for patients in accordance with the design.
 
 Implementing a chart (e.g., blood pressure over time) using Chart.js or any chart library of your choice.
 
-# H1-📎 Resources
+##-📎 Resources
 
 Adobe XD Template: View Template
 
@@ -18,7 +18,7 @@ Patient Data API Docs: API Documentation
 
 Chart Library (recommended): Chart.js
 
-# H1 - Project Structure
+## - Project Structure
 
 project-root/
 │
