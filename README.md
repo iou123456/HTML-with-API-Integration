@@ -17,3 +17,17 @@ Patient Data API Docs: API Documentation
 
 Chart Library (recommended): Chart.js
 
+**Project Structure
+**
+project-root/
+│
+├── index.html              # Entry point (required)
+├── css/
+│   └── styles.css          # Custom styles
+├── js/
+│   ├── api.js              # API call logic
+│   └── chart.js            # Chart.js integration
+├── assets/                 # Images and icons
+├── components/             # Optional (if using a framework)
+├── README.md               # This file
+└── package.json            # If using a framework or build tool
